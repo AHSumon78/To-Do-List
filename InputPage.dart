@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 
 class InputPage extends StatelessWidget {
-  var name;
   final nameController = TextEditingController();
 
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('second Secreen'),
+        title: Text('Add your task'),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
