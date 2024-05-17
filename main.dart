@@ -22,11 +22,13 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  List<bool> isCheck = [];
   var typeText = '';
   var text = [];
   void _setText() {
     setState(() {
       text.add(typeText);
+      isCheck.add(false);
     });
   }
 
@@ -43,9 +45,13 @@ class _MyHomePageState extends State<MyHomePage> {
           itemBuilder: (context, index) {
             return Padding(
               padding: const EdgeInsets.all(25.0),
-              child: Text(
-                text[index],
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
+              child: Row(
+                children: [
+                  Text(
+                    text[index],
+                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
+                  ),
+                ],
               ),
             );
           },
