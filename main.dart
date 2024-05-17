@@ -32,6 +32,13 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  void _CompleteTask(int index) {
+    setState(() {
+      text.removeAt(index);
+      isCheck.removeAt(index);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,6 +60,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     onChanged: (value) {
                       setState(() {
                         isCheck[index] = !isCheck[index];
+                        Future.delayed(Duration(seconds: 1), () {
+                          _CompleteTask(index);
+                        });
                       });
                     },
                   ),
