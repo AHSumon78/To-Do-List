@@ -47,6 +47,15 @@ class _MyHomePageState extends State<MyHomePage> {
               padding: const EdgeInsets.all(25.0),
               child: Row(
                 children: [
+                  Checkbox(
+                    value: isCheck[index],
+                    activeColor: Colors.blue,
+                    onChanged: (value) {
+                      setState(() {
+                        isCheck[index] = !isCheck[index];
+                      });
+                    },
+                  ),
                   Text(
                     text[index],
                     style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
